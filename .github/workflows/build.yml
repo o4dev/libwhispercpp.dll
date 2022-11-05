@@ -2,7 +2,7 @@ name: CI
 on: [push]
 
 jobs:
-    windows-latest-debug:
+    windows-latest:
         runs-on: windows-latest
 
         steps:
@@ -15,14 +15,15 @@ jobs:
             - name: Configure
               run: cmake -S . -B .\build
               
-            - name: View build
-              run: dir .\build
-              
             - name: Compile main
               run: msbuild build\whisper.cpp.sln
 
             - name: View build
               run: dir .\build
               
-            - name: View whole
-              run: dir .
+            - name: Upload Build Artifact
+              uses: actions/upload-artifact@v3.1.1
+              with:
+                # Artifact name
+                name: Build
+                path: build\bin
