@@ -19,7 +19,7 @@ jobs:
               run: dir .\build
               
             - name: Compile main
-              run: msbuild whisper.cpp.sln
+              run: msbuild build\whisper.cpp.sln
 
             - name: View build
               run: dir .\build
