@@ -15,5 +15,5 @@ jobs:
             - name: Configure
               run: cmake -S . -B .\build
               
-            - name: Compile
+            - name: Compile main
               run: msbuild .\build\main.sln
