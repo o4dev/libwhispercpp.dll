@@ -18,4 +18,11 @@ jobs:
             - name: View build
               run: dir .\build
               
-            
+            - name: Compile main
+              run: msbuild whisper.cpp.sln
+
+            - name: View build
+              run: dir .\build
+              
+            - name: View whole
+              run: dir .
