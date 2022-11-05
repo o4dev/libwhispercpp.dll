@@ -2,7 +2,7 @@ name: CI
 on: [push]
 
 jobs:
-    windows-latest:
+    windows-latest-debug:
         runs-on: windows-latest
 
         steps:
@@ -18,5 +18,4 @@ jobs:
             - name: View build
               run: dir .\build
               
-            - name: Compile main
-              run: msbuild .\build\main.sln
+            
